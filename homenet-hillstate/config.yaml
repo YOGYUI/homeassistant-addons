@@ -60,7 +60,7 @@ stdin: false
 legacy: false
 # options:
 # schema:
-image: "ghcr.io/yoguyi/ha-addon-homenet-hillstate-{arch}"
+# image: "ghcr.io/YOGYUI/ha-addon-homenet-hillstate-{arch}"
 # codenotary:
 timeout: 10
 tmpfs: false
