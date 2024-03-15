@@ -1,87 +1,31 @@
-# reference: https://developers.home-assistant.io/docs/add-ons/configuration
-# required configuration options
-################################################################################
-name: "YOGYUI HomeNetwork(Hillstate)"
+name: HomeNetwork for Hillstate
 version: "1.0.0"
-slug: "yogyui_homenet_hillstate"
-description: >-
-  "RS-485 based HomeNetwork for Hillstate (Hyundai HT)"
+slug: yogyui_homenet_hillstate
+description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
   - armhf
   - armv7
   - aarch64
   - amd64
   - i386
-
-# Optional configuration options
-################################################################################
-# machine:
-url: "https://github.com/YOGYUI/homeassistant-addons/tree/main/homenet-hillstate"
-startup: "application"
-webui: http://127.0.0.1:7929
-boot: "auto"
+# image: yogyui/ha-addon-homenet-hillstate
+image: yogyui/ha-addon-{arch}-homenet-hillstate
+init: false
+startup: application
+url: https://github.com/YOGYUI/homeassistant-addons/tree/main/homenet-hillstate
+ingress: true
+ingress_port: 7929
+ingress_stream: true
 ports:
   7929/tcp: 7929
-# ports_description:
-host_network: false
-host_ipc: false
-host_dbus: false
-host_pid: false
-host_uts: false
-# devices:
-# homeassistant:
-hassio_role: "default"
-hassio_api: true
-homeassistant_api: true
-docker_api: false
+ports_description:
+  7929/tcp: Web service server port
 privileged:
-  - "SYS_ADMIN"
-full_access: false
+  - SYS_ADMIN
+full_access: true
 apparmor: false
-map:
-  - homeassistant_config:rw
-  - addon_config:rw
-  - ssl:rw
-  - addons:rw
-  - backup:rw
-  - share:rw
-  - media:rw
-  - all_addon_configs:rw
-# environment:
-audio: false
-video: false
-gpio: false
-usb: false
-uart: false
-udev: false
-devicetree: false
-kernel_modules: false
-stdin: false
-legacy: false
-# options:
-# schema:
-# image: "ghcr.io/YOGYUI/ha-addon-homenet-hillstate-{arch}"
-# codenotary:
-timeout: 10
-tmpfs: false
-# discovery:
-# services:
-auth_api: false
-ingress: false
-ingress_port: 8099
-ingress_entry: /
-ingress_stream: false
-panel_icon: "mdi:home-automation"
-panel_title: "YOGYUI HOMENETWORK"
+panel_icon: mdi:home-automation
+panel_title: YOGYUI-HILLSTATE
 panel_admin: false
-backup: "hot"
-# backup_pre:
-# backup_post:
-# backup_exclude:
-advanced: false
-stage: "stable"
-init: true
-# watchdog
-realtime: false
-journald: false
-# breaking_versions
+map:
+  - share:rw
