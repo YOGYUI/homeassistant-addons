@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.0.1"
+version: "1.0.2"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -8,7 +8,6 @@ arch:
   - aarch64
   - amd64
   - i386
-# image: yogyui/ha-addon-homenet-hillstate
 image: yogyui/ha-addon-{arch}-homenet-hillstate
 init: false
 startup: application
@@ -17,10 +16,6 @@ ingress: true
 ingress_port: 7929
 ingress_entry: /
 ingress_stream: false
-ports:
-  7929/tcp: 7929
-ports_description:
-  7929/tcp: Web service server port
 privileged:
   - SYS_ADMIN
 full_access: true
@@ -30,3 +25,7 @@ panel_title: YOGYUI-HILLSTATE
 panel_admin: false
 map:
   - share:rw
+#ports:
+#  7929/tcp: 7929
+#ports_description:
+#  7929/tcp: Web service server port
