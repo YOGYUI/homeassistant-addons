@@ -12,7 +12,7 @@ image: yogyui/ha-addon-{arch}-homenet-hillstate
 init: false
 startup: application
 url: https://github.com/YOGYUI/homeassistant-addons/tree/main/homenet-hillstate
-ingress: true
+ingress: false
 ingress_port: 7929
 ingress_entry: /
 ingress_stream: false
@@ -25,7 +25,72 @@ panel_title: YOGYUI-HILLSTATE
 panel_admin: false
 map:
   - share:rw
-#ports:
-#  7929/tcp: 7929
-#ports_description:
-#  7929/tcp: Web service server port
+  - addon_config:rw
+options:
+  mqtt_broker:
+    host: 127.0.0.1
+    port: 1883
+    username: username
+    password: password
+  rs485:
+    - name: port1
+      index: 0
+      enable: true
+      hwtype: 0
+      packettype: 0
+      serial: /dev/ttyUSB0
+      baudrate: 9600
+      databit: 8
+      parity: N
+      stopbits: 1
+      socketaddr: 127.0.0.1
+      socketport: 8899
+  discovery:
+    activate: true
+    prefix: homeassistant
+    timeout: 60
+  parser_mapping:
+    light: 0
+    outlet: 0
+    gasvalve: 0
+    thermostat: 0
+    ventilator: 0
+    airconditioner: 0
+    elevator: 0
+    subphone: 0
+    batchoffsw: 0
+    hems: 0
+schema:
+  mqtt_broker:
+    host: str
+    port: int
+    username: str
+    password: str
+  rs485:
+    - name: str
+      index: int(0,)
+      enable: bool
+      hwtype: int(0,1)
+      packettype: int(0,1)
+      serial: str
+      baudrate: int
+      databit: int(5,8)
+      parity: str
+      stopbits: float
+      socketaddr: str
+      socketport: int
+  discovery:
+    activate: bool
+    prefix: str
+    timeout: int(1,)
+  parser_mapping:
+    light: int(0,)
+    outlet: int(0,)
+    gasvalve: int(0,)
+    thermostat: int(0,)
+    ventilator: int(0,)
+    airconditioner: int(0,)
+    elevator: int(0,)
+    subphone: int(0,)
+    batchoffsw: int(0,)
+    hems: int(0,)
