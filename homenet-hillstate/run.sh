@@ -1,3 +1,4 @@
+#!/usr/bin/with-contenv bashio
 repo_path=/repos/yogyui/HomeNetwork
 
 echo "try to update repository"

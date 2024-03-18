@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.0.2"
+version: "1.0.3"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -60,6 +60,8 @@ options:
     subphone: 0
     batchoffsw: 0
     hems: 0
+  etc:
+    thermo_len_per_dev: 3
 schema:
   mqtt_broker:
     host: str
@@ -94,3 +96,5 @@ schema:
     subphone: int(0,)
     batchoffsw: int(0,)
     hems: int(0,)
+  etc:
+    thermo_len_per_dev: int(1,)
