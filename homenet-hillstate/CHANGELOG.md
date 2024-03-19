@@ -4,6 +4,7 @@
 
 - config.xml container sharing
 - apparmor
+- document (configuration)
 
 ## 1.0.3
 

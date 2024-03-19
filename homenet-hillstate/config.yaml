@@ -28,7 +28,7 @@ map:
 options:
   app_config_file_path: /config/app_config.xml
   mqtt_broker:
-    host: 127.0.0.1
+    host: core-mosquitto
     port: 1883
     username: username
     password: password
