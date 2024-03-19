@@ -5,11 +5,12 @@ elif [ -n "${ZSH_VERSION-}" ]; then
 else
     script_path=$0
 fi
-script_dir=$(dirname $(dirname $(realpath $script_path)))
+script_dir=$(dirname $(realpath $script_path))
+addon_path=$(dirname $script_dir)
 
 docker run \
   -it \
   --privileged \
-  -v ${script_dir}:/data \
+  -v ${addon_path}:/data \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   local/my-test-addon

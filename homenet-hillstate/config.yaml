@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.0.3"
+version: "1.0.4"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -12,21 +12,21 @@ image: yogyui/ha-addon-{arch}-homenet-hillstate
 init: false
 startup: application
 url: https://github.com/YOGYUI/homeassistant-addons/tree/main/homenet-hillstate
-ingress: false
+ingress: true
 ingress_port: 7929
 ingress_entry: /
 ingress_stream: false
-privileged:
-  - SYS_ADMIN
-full_access: true
-apparmor: false
+full_access: false
+apparmor: true
 panel_icon: mdi:home-automation
 panel_title: YOGYUI-HILLSTATE
 panel_admin: false
 map:
-  - share:rw
   - addon_config:rw
+  - share:rw
+  - backup:rw
 options:
+  app_config_file_path: /config/app_config.xml
   mqtt_broker:
     host: 127.0.0.1
     port: 1883
@@ -46,7 +46,7 @@ options:
       socketaddr: 127.0.0.1
       socketport: 8899
   discovery:
-    activate: true
+    activate: false
     prefix: homeassistant
     timeout: 60
   parser_mapping:
@@ -60,9 +60,10 @@ options:
     subphone: 0
     batchoffsw: 0
     hems: 0
-  etc:
+  etc: 
     thermo_len_per_dev: 3
 schema:
+  app_config_file_path: str
   mqtt_broker:
     host: str
     port: int
