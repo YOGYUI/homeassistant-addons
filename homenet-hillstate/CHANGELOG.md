@@ -1,5 +1,11 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.5
+
+- automatic deactivate device discovery after action done
+- add elevator 'packet call type', 'check command method' options
+- add thermostat / elevator range min max options
+
 ## 1.0.4
 
 - config.xml container sharing
