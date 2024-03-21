@@ -12,6 +12,7 @@ RUN apk add --update --no-cache \
 RUN mkdir -p /repos/yogyui
 RUN git clone https://github.com/YOGYUI/HomeNetwork.git /repos/yogyui/HomeNetwork
 WORKDIR /repos/yogyui/HomeNetwork/Hillstate-Gwanggyosan
+RUN git config pull.rebase true
 
 # create & activate python virtual environment, install python requirements
 RUN /bin/bash -c "source ./bootstrap.sh"

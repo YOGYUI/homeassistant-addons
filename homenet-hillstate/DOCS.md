@@ -2,7 +2,6 @@
 앱 구동에 필요한 파라미터들을 HA 애드온 `구성`에서 설정할 수 있다
 
 ### MQTT 브로커 설정
-![option_mqtt_broker.png](./images/option_mqtt_broker.png)
 ```yaml
 mqtt_broker:
   host: core-mosquitto
@@ -19,7 +18,6 @@ mqtt_broker:
 `TODO`: ssl 보안 접속 기능은 향후 추가 예정<br>
 
 ### RS-485 컨버터 설정
-![option_rs485.png](./images/option_rs485.png)
 ```yaml
 rs485:
   - name: port1
@@ -83,7 +81,6 @@ rs485:
   ```
 
 ### 디바이스 자동 탐색 설정
-![option_discovery.png](./images/option_discovery.png)
 ```yaml
 discovery:
   activate: false
@@ -98,7 +95,6 @@ discovery:
 `TODO`: 자동 탐색 후 애드온 config 수정
 
 ### 패킷 파서 인덱스 매핑
-![option_parser_mapping.png](./images/option_parser_mapping.png)
 ```yaml
 parser_mapping:
   light: 0
@@ -127,9 +123,20 @@ parser_mapping:
 각각의 RS-485 포트가 어떤 장비와의 통신을 담당하는지 사전에 알고 있어야 한다.
 
 ### 기타 설정
-![option_etc.png](./images/option_etc.png)
 ```yaml
 etc: 
   thermo_len_per_dev: 3
+  thermostat_range_min: 18
+  thermostat_range_max: 35
+  airconditioner_range_min: 18
+  airconditioner_range_max: 35
+  elevator_packet_call_type: 0
+  elevator_check_command_method: 0
 ```
 - thermo_len_per_dev: 난방 평소 쿼리-응답 패킷의 기기별 패킷 길이 (`3` 혹은 `8`)
+- thermostat_range_min: 난방 기기 설정 온도 최소값
+- thermostat_range_max: 난방 기기 설정 온도 최대값
+- airconditioner_range_min: 에어컨 기기 설정 온도 최소값
+- airconditioner_range_max: 에어컨 기기 설정 온도 최대값
+- elevator_packet_call_type: 엘리베이터 호출 패킷 타입 (`0` 혹은 `1`) - 개발자에게 문의
+- elevator_check_command_method: 엘리베이터 호출 상태 확인 방법 (`0` 혹은 `1`) - 개발자에게 문의

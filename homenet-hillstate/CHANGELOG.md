@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.6
+
+- specify git pull strategy (rebase)
+
 ## 1.0.5
 
 - automatic deactivate device discovery after action done
