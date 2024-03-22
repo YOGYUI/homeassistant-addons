@@ -6,6 +6,7 @@ LABEL maintainer="YOGYUI lee2002w@gmail.com"
 RUN apk add --update --no-cache \
     bash curl nano vim wget git openrc \
     gcc openssl-dev libffi-dev musl-dev linux-headers cargo pkgconfig nginx \
+    pcre-dev uwsgi-python3 \
     python3 python3-dev py3-pip
 
 # clone repository from GitHub
@@ -25,6 +26,7 @@ EXPOSE 7929
 COPY ingress.conf /etc/nginx/http.d/
 COPY run.sh /
 RUN chmod a+x /run.sh
+COPY uwsgi.ini ./
 
 CMD ["/bin/bash", "-c", "/run.sh"]
-# CMD /bin/bash -c "/run.sh; /bin/bash"  # for debugging
+# CMD /bin/bash -c "/run.sh; /bin/bash"

@@ -89,10 +89,7 @@ discovery:
 ```
 - activate: `true`일 경우 RS-485 패킷을 해석해 기기들을 자동으로 추가됨
 - prefix: HA MQTT 애드온의 디바이스 디스커버리 접두어 (따로 설정하지 않았을 경우 `homeassistant`로 그대로 두면 됨)
-- timeout: 디바이스 자동 탐색 시간 (시간이 지난 후 앱이 자동으로 재시작됨)
-
-`NOTE`: 자동 탐색 기능을 활성화한 경우, 애드온을 재시작하기 전에 `activate`를 반드시 `false`로 다시 원상복구해야함 <br>
-`TODO`: 자동 탐색 후 애드온 config 수정
+- timeout: 디바이스 자동 탐색 시간 (시간이 지난 후 앱이 자동으로 재시작되며, **자동으로 discovery 기능은 deactivate됨**)
 
 ### 패킷 파서 인덱스 매핑
 ```yaml
@@ -121,6 +118,18 @@ parser_mapping:
 
 `NOTE`: 2개 이상의 컨버터가 연결된 경우, 각 컨버터의 인덱스 값을 매핑해줘야 한다.<br>
 각각의 RS-485 포트가 어떤 장비와의 통신을 담당하는지 사전에 알고 있어야 한다.
+
+### 주기적 쿼리 패킷 전송 설정
+월패드가 연결된 기기들에게 평소에 쿼리 패킷을 주기적으로 전송하지 않는 경우 사용
+```yaml
+periodic_query_state:
+  enable: false
+  period: 1000
+  verbose: false
+```
+- enable: 1일 경우 주기적으로 쿼리 패킷을 순차적으로 전송
+- period: 쿼리 주기 (단위: ms, 1000 = 1초)
+- verbose: 로그 기록 여부 (디버깅용)
 
 ### 기타 설정
 ```yaml
