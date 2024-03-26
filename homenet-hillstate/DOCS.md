@@ -1,5 +1,6 @@
 # 애드온 설정 방법
-앱 구동에 필요한 파라미터들을 HA 애드온 `구성`에서 설정할 수 있다
+앱 구동에 필요한 파라미터들을 HA 애드온 `구성`에서 설정할 수 있다<br>
+(애드온 사용법 예시는 [개발자 블로그](https://yogyui.tistory.com/entry/Home-Assistant-add-on-%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EC%A7%80-2-%EB%B2%A0%ED%83%80%EB%B2%84%EC%A0%84-%EB%A6%B4%EB%A6%AC%EC%A6%88) 참고)
 
 ### MQTT 브로커 설정
 ```yaml
@@ -8,11 +9,21 @@ mqtt_broker:
   port: 1883
   username: username
   password: password
+  client_id: yogyui_hyundai_ht
+  tls_enable: false
+  tls_ca_certs: /config/ssl/cacert.pem
+  tls_certfile: /config/ssl/fullchain.pem
+  tls_keyfile: /config/ssl/privkey.pem
 ```
 - host: MQTT 브로커 호스트 주소 (ip주소 혹은 dns)
 - port: MQTT 브로커 TCP 포트 번호 (default 1883)
 - username: MQTT 브로커 접속 계정
 - password: MQTT 브로커 계정 패스워드
+- client_id: MQTT 브로커에 접속할 클라이언트 아이디
+- tls_enable: TLS/SSL 보안접속 활성화 여부
+- tls_ca_certs: CA 인증서 파일 경로
+- tls_certfile: 클라이언트 인증서 파일 경로 (PEM 인코딩)
+- tls_keyfile: 클라이언트 개인키 파일 경로 (PEM 인코딩)
 
 `NOTE`: HA의 [mosquitto 애드온](https://github.com/home-assistant/addons/tree/master/mosquitto)을 사용하지 않을 경우 host를 적절하게 수정해줘야 한다<br>
 `TODO`: ssl 보안 접속 기능은 향후 추가 예정<br>
@@ -87,7 +98,7 @@ discovery:
   prefix: homeassistant
   timeout: 60
 ```
-- activate: `true`일 경우 RS-485 패킷을 해석해 기기들을 자동으로 추가됨
+- activate: `true`일 경우 RS-485 패킷을 해석해 기기들을 자동으로 추가됨(**discovery 완료 후 자동으로 false로 전환됨**)
 - prefix: HA MQTT 애드온의 디바이스 디스커버리 접두어 (따로 설정하지 않았을 경우 `homeassistant`로 그대로 두면 됨)
 - timeout: 디바이스 자동 탐색 시간 (시간이 지난 후 앱이 자동으로 재시작되며, **자동으로 discovery 기능은 deactivate됨**)
 
@@ -141,6 +152,7 @@ etc:
   airconditioner_range_max: 35
   elevator_packet_call_type: 0
   elevator_check_command_method: 0
+  clear_all_devices: false
 ```
 - thermo_len_per_dev: 난방 평소 쿼리-응답 패킷의 기기별 패킷 길이 (`3` 혹은 `8`)
 - thermostat_range_min: 난방 기기 설정 온도 최소값
@@ -149,3 +161,5 @@ etc:
 - airconditioner_range_max: 에어컨 기기 설정 온도 최대값
 - elevator_packet_call_type: 엘리베이터 호출 패킷 타입 (`0` 혹은 `1`) - 개발자에게 문의
 - elevator_check_command_method: 엘리베이터 호출 상태 확인 방법 (`0` 혹은 `1`) - 개발자에게 문의
+- clear_all_devices: 추가된 모든 RS-485 디바이스를 어플리케이션에서 삭제 (어플리케이션 재시작 후 자동으로 false로 전환됨)<br>
+  `Note`: HA의 entry를 삭제하지는 않음

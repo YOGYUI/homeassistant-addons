@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.0.7"
+version: "1.0.8"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -32,6 +32,11 @@ options:
     port: 1883
     username: username
     password: password
+    client_id: yogyui_hyundai_ht
+    tls_enable: false
+    tls_ca_certs: /config/ssl/cacert.pem
+    tls_certfile: /config/ssl/fullchain.pem
+    tls_keyfile: /config/ssl/privkey.pem
   rs485:
     - name: port1
       index: 0
@@ -72,6 +77,7 @@ options:
     airconditioner_range_max: 35
     elevator_packet_call_type: 0
     elevator_check_command_method: 0
+    clear_all_devices: false
 schema:
   app_config_file_path: str
   mqtt_broker:
@@ -79,6 +85,11 @@ schema:
     port: int
     username: str
     password: str
+    client_id: str
+    tls_enable: bool
+    tls_ca_certs: str
+    tls_certfile: str
+    tls_keyfile: str
   rs485:
     - name: str
       index: int(0,)
@@ -119,4 +130,5 @@ schema:
     airconditioner_range_max: int
     elevator_packet_call_type: int(0,1)
     elevator_check_command_method: int(0,1)
+    clear_all_devices: bool
   

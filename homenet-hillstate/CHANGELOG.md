@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.8
+- add 'clear all devices' function
+- support mqtt tls/ssl secured connection
+
 ## 1.0.7
 - run flask app using uwsgi
 - implement 'send periodic query state' function
