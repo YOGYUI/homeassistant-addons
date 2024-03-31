@@ -1,6 +1,5 @@
-<!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
-
 ## 1.0.8
+- bugfix: usb serial converter connection issue
 - add 'clear all devices' function
 - support mqtt tls/ssl secured connection
 

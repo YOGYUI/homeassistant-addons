@@ -18,6 +18,10 @@ ingress_entry: /
 ingress_stream: false
 full_access: false
 apparmor: true
+uart: true
+usb: true
+gpio: true
+audio: true
 panel_icon: mdi:home-automation
 panel_title: YOGYUI-HILLSTATE
 panel_admin: false
