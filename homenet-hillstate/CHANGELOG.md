@@ -1,3 +1,6 @@
+## 1.0.9
+- add device type: 'Emotion Light' 
+
 ## 1.0.8
 - bugfix: usb serial converter connection issue
 - add 'clear all devices' function

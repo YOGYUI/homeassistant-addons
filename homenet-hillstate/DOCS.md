@@ -115,8 +115,9 @@ parser_mapping:
   subphone: 0
   batchoffsw: 0
   hems: 0
+  emotionlight: 0
 ```
-- light: 전등 장비와 연결된 RS-485 컨버터의 `index` 값
+- light: 전등 장비(일반조명)와 연결된 RS-485 컨버터의 `index` 값
 - outlet: 콘센트 장비와 연결된 RS-485 컨버터의 `index` 값
 - gasvalve: 가스 밸브 장비와 연결된 RS-485 컨버터의 `index` 값
 - thermostat: 난방 장비와 연결된 RS-485 컨버터의 `index` 값
@@ -126,6 +127,7 @@ parser_mapping:
 - subphone: 주방 비디오폰 장비와 연결된 RS-485 컨버터의 `index` 값
 - batchoffsw: 일괄 소등 장비와 연결된 RS-485 컨버터의 `index` 값
 - hems: 주방 비디오폰 장비와 연결된 RS-485 컨버터의 `index` 값
+- emotionlight: 감성조명과 연결된 RS-485 컨버터의 `index` 값
 
 `NOTE`: 2개 이상의 컨버터가 연결된 경우, 각 컨버터의 인덱스 값을 매핑해줘야 한다.<br>
 각각의 RS-485 포트가 어떤 장비와의 통신을 담당하는지 사전에 알고 있어야 한다.
