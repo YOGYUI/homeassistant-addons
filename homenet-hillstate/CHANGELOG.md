@@ -1,3 +1,6 @@
+## 1.1.0
+- add 'Subphone' configuration
+
 ## 1.0.9
 - add device type: 'Emotion Light' 
 

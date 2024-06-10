@@ -165,3 +165,24 @@ etc:
 - elevator_check_command_method: 엘리베이터 호출 상태 확인 방법 (`0` 혹은 `1`) - 개발자에게 문의
 - clear_all_devices: 추가된 모든 RS-485 디바이스를 어플리케이션에서 삭제 (어플리케이션 재시작 후 자동으로 false로 전환됨)<br>
   `Note`: HA의 entry를 삭제하지는 않음
+
+### 주방 비디오폰(Subphone) 설정
+```yaml
+subphone:
+  enable: false
+  enable_video_streaming: false
+  conf_file_path: /etc/ffserver.conf
+  feed_path: http://0.0.0.0:8090/feed.ffm
+  input_device: /dev/video0
+  frame_rate: 30
+  width: 640
+  height: 480
+```
+- enable: 주방 비디오폰 연동 여부
+- enable_video_streaming: 주방 비디오폰의 영상 신호 연동 여부 (FFMpeg + FFServer)
+- conf_file_path: FFServer 설정 파일 경로
+- feed_path: FFServer 스트리밍 경로
+- input_device: 비디오 디바이스 경로
+- frame_rate: 스트리밍 프레임율(fps)
+- width: 스트리밍 영상의 폭
+- height: 스트리밍 영상의 높이

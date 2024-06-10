@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.0.9"
+version: "1.1.0"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -73,6 +73,15 @@ options:
     enable: false
     period: 1000
     verbose: false
+  subphone:
+    enable: false
+    enable_video_streaming: false
+    conf_file_path: /etc/ffserver.conf
+    feed_path: http://0.0.0.0:8090/feed.ffm
+    input_device: /dev/video0
+    frame_rate: 30
+    width: 640
+    height: 480
   etc: 
     thermo_len_per_dev: 3
     thermostat_range_min: 18
@@ -127,6 +136,15 @@ schema:
     enable: bool
     period: int
     verbose: bool
+  subphone:
+    enable: bool
+    enable_video_streaming: bool
+    conf_file_path: str
+    feed_path: str
+    input_device: str
+    frame_rate: int
+    width: int
+    height: int
   etc:
     thermo_len_per_dev: int(1,)
     thermostat_range_min: int

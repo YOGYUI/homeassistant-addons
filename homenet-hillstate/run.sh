@@ -12,6 +12,7 @@ CONFIG_RS485="[$(echo $(bashio::config 'rs485') | sed -e 's/} /},/g')]"  # parse
 CONFIG_DISCOVERY="$(bashio::config 'discovery')"
 CONFIG_PARSER_MAPPING="$(bashio::config 'parser_mapping')"
 CONFIG_PERIODIC_QUERY_STATE="$(bashio::config 'periodic_query_state')"
+CONFIG_SUBPHONE="$(bashio::config 'subphone')"
 CONFIG_ETC="$(bashio::config 'etc')"
 
 # source ${repo_path}/Hillstate-Gwanggyosan/activate.sh
@@ -31,4 +32,5 @@ uwsgi --ini ${repo_path}/Hillstate-Gwanggyosan/uwsgi.ini \
   --discovery=$CONFIG_DISCOVERY \
   --parser_mapping=$CONFIG_PARSER_MAPPING \
   --periodic_query_state=$CONFIG_PERIODIC_QUERY_STATE \
+  --subphone=$CONFIG_SUBPHONE \
   --etc=$CONFIG_ETC"

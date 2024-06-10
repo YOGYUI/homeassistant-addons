@@ -7,6 +7,9 @@ else
 fi
 script_dir=$(dirname $(dirname $(realpath $script_path)))
 
+## for crosscompile multi architecture
+# docker run --privileged --rm tonistiigi/binfmt --install all
+
 ## buildx driver가 docker-container면 제대로 푸시되지 않는다?
 ## > default driver로 빌드하게 변경해줘야 한다
 # docker buildx use default 
