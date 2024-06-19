@@ -43,6 +43,7 @@ rs485:
     stopbits: 1
     socketaddr: 127.0.0.1
     socketport: 8899
+    check_connection: true
 ```
 - name: 컨버터 이름 (로그에 찍히는 이름), 아무렇게나 임의로 정하면 됨
 - index: 0부터 시작해 컨버터 순서대로 1씩 증가해야 함, 기기간 중복되면 안됨
@@ -60,6 +61,7 @@ rs485:
     - socketaddr: 기기의 IP 주소
     - socketport: 기기의 TCP 포트 번호
 - packettype: `0` (`1`일 경우 주방 비디오폰용으로 사용해야 함)
+- check_connection: 주기적으로 연결 상태 확인(패킷 송수신 여부) 및 재접속 시도 여부
 
 `NOTE`: 와이파이 컨버터의 경우 현재 TCP 소켓 통신만 지원함
 `NOTE`: 2개 이상의 컨버터를 사용하고자 하는 경우 설정을 아래와 같이 추가해줘야 함

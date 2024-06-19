@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.1.0"
+version: "1.1.1"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -53,6 +53,7 @@ options:
       stopbits: 1
       socketaddr: 127.0.0.1
       socketport: 8899
+      check_connection: true
   discovery:
     activate: false
     prefix: homeassistant
@@ -116,6 +117,7 @@ schema:
       stopbits: float
       socketaddr: str
       socketport: int
+      check_connection: bool
   discovery:
     activate: bool
     prefix: str

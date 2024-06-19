@@ -1,3 +1,6 @@
+## 1.1.1
+- add option for periodic checking RS485 instance connection status
+
 ## 1.1.0
 - add 'Subphone' configuration
 
