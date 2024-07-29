@@ -118,6 +118,7 @@ parser_mapping:
   batchoffsw: 0
   hems: 0
   emotionlight: 0
+  dimminglight: 0
 ```
 - light: 전등 장비(일반조명)와 연결된 RS-485 컨버터의 `index` 값
 - outlet: 콘센트 장비와 연결된 RS-485 컨버터의 `index` 값
@@ -130,6 +131,7 @@ parser_mapping:
 - batchoffsw: 일괄 소등 장비와 연결된 RS-485 컨버터의 `index` 값
 - hems: 주방 비디오폰 장비와 연결된 RS-485 컨버터의 `index` 값
 - emotionlight: 감성조명과 연결된 RS-485 컨버터의 `index` 값
+- dimminglight: 디밍조명과 연결된 RS-485 컨버터의 `index` 값
 
 `NOTE`: 2개 이상의 컨버터가 연결된 경우, 각 컨버터의 인덱스 값을 매핑해줘야 한다.<br>
 각각의 RS-485 포트가 어떤 장비와의 통신을 담당하는지 사전에 알고 있어야 한다.
@@ -156,6 +158,8 @@ etc:
   airconditioner_range_max: 35
   elevator_packet_call_type: 0
   elevator_check_command_method: 0
+  dimminglight_max_brightness_level: 7
+  dimminglight_convert_method: 0
   clear_all_devices: false
 ```
 - thermo_len_per_dev: 난방 평소 쿼리-응답 패킷의 기기별 패킷 길이 (`3` 혹은 `8`)
@@ -165,6 +169,8 @@ etc:
 - airconditioner_range_max: 에어컨 기기 설정 온도 최대값
 - elevator_packet_call_type: 엘리베이터 호출 패킷 타입 (`0` 혹은 `1`) - 개발자에게 문의
 - elevator_check_command_method: 엘리베이터 호출 상태 확인 방법 (`0` 혹은 `1`) - 개발자에게 문의
+- dimminglight_max_brightness_level: 디밍조명 최고 밝기 레벨 (`1` ~ `255` 사이 값)
+- dimminglight_convert_method: 디밍조명 밝기값 변환 방법 (`0`: 반올림, `1`: 내림, `2`: 올림)
 - clear_all_devices: 추가된 모든 RS-485 디바이스를 어플리케이션에서 삭제 (어플리케이션 재시작 후 자동으로 false로 전환됨)<br>
   `Note`: HA의 entry를 삭제하지는 않음
 

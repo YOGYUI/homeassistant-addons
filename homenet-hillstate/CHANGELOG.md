@@ -1,3 +1,6 @@
+## 1.1.2
+- add device type: 'Dimming Light' 
+
 ## 1.1.1
 - add option for periodic checking RS485 instance connection status
 
