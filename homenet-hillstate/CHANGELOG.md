@@ -1,21 +1,31 @@
+## 1.1.3
+
+- add parameters for sending RS-485 command packets (interval and retry count)
+
 ## 1.1.2
+
 - add device type: 'Dimming Light' 
 
 ## 1.1.1
+
 - add option for periodic checking RS485 instance connection status
 
 ## 1.1.0
+
 - add 'Subphone' configuration
 
 ## 1.0.9
+
 - add device type: 'Emotion Light' 
 
 ## 1.0.8
+
 - bugfix: usb serial converter connection issue
 - add 'clear all devices' function
 - support mqtt tls/ssl secured connection
 
 ## 1.0.7
+
 - run flask app using uwsgi
 - implement 'send periodic query state' function
 

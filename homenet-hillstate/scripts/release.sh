@@ -7,6 +7,9 @@ else
 fi
 script_dir=$(dirname $(dirname $(realpath $script_path)))
 
+## docker permission denied 해결법 
+# sudo chown -R $(whoami) ~/.docker
+
 ## for crosscompile multi architecture
 # docker run --privileged --rm tonistiigi/binfmt --install all
 
