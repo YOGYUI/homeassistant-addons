@@ -44,8 +44,8 @@ rs485:
     socketaddr: 127.0.0.1
     socketport: 8899
     check_connection: true
-    cmd_interval_ms: 200
-    cmd_retry_count: 10
+    cmd_interval_ms: 100
+    cmd_retry_count: 50
 ```
 - name: 컨버터 이름 (로그에 찍히는 이름), 아무렇게나 임의로 정하면 됨
 - index: 0부터 시작해 컨버터 순서대로 1씩 증가해야 함, 기기간 중복되면 안됨
