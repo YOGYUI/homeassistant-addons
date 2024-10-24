@@ -1,3 +1,7 @@
+## 1.1.4
+
+- add parameters for auto-open front/communal door (kitchen subphone)
+
 ## 1.1.3
 
 - add parameters for sending RS-485 command packets (interval and retry count)

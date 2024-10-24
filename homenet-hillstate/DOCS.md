@@ -189,6 +189,10 @@ subphone:
   frame_rate: 30
   width: 640
   height: 480
+  enable_auto_open_front_door: false
+  auto_open_front_door_interval: 3
+  enable_auto_open_communal_door: false
+  auto_open_communal_door_interval: 3
 ```
 - enable: 주방 비디오폰 연동 여부
 - enable_video_streaming: 주방 비디오폰의 영상 신호 연동 여부 (FFMpeg + FFServer)
@@ -198,3 +202,7 @@ subphone:
 - frame_rate: 스트리밍 프레임율(fps)
 - width: 스트리밍 영상의 폭
 - height: 스트리밍 영상의 높이
+- enable_auto_open_front_door: 세대현관문 초인종 울림 후 자동 열림 기능 활성화 여부 (지정하지 않을 시 default값은 false)
+- auto_open_front_door_interval: 세대현관문 초인종 울림 후 자동으로 열리기까지의 시간 (단위: 초, 지정하지 않을 시 default값은 3.0)
+- enable_auto_open_communal_door: 공동현관문 초인종 울림 후 자동 열림 기능 활성화 여부 (지정하지 않을 시 default값은 false)
+- auto_open_communal_door_interval: 공동현관문 초인종 울림 후 자동으로 열리기까지의 시간 (단위: 초,지정하지 않을 시 default값은 3.0)
