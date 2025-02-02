@@ -1,3 +1,7 @@
+## 1.1.6
+
+- add parameter for logging elevator related rs-485 packet
+
 ## 1.1.5
 
 - add parameter for calling elevator downside value

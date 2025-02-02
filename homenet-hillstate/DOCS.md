@@ -163,6 +163,7 @@ etc:
   elevator_packet_call_type: 0
   elevator_check_command_method: 0
   elevator_packet_command_call_down_value: 6
+  elevator_verbose_packet: false
   dimminglight_max_brightness_level: 7
   dimminglight_convert_method: 0
   clear_all_devices: false
@@ -175,6 +176,7 @@ etc:
 - elevator_packet_call_type: 엘리베이터 호출 패킷 타입 (`0` 혹은 `1`) - 개발자에게 문의
 - elevator_check_command_method: 엘리베이터 호출 상태 확인 방법 (`0` 혹은 `1`) - 개발자에게 문의
 - elevator_packet_command_call_down_value: 엘리베이터 하행 호출 명령값 (`6` 혹은 `7`) - 개발자에게 문의
+- elevator_verbose_packet: 엘리베이터 관련 RS-485 패킷 로깅 여부
 - dimminglight_max_brightness_level: 디밍조명 최고 밝기 레벨 (`1` ~ `255` 사이 값)
 - dimminglight_convert_method: 디밍조명 밝기값 변환 방법 (`0`: 반올림, `1`: 내림, `2`: 올림)
 - clear_all_devices: 추가된 모든 RS-485 디바이스를 어플리케이션에서 삭제 (어플리케이션 재시작 후 자동으로 false로 전환됨)<br>
