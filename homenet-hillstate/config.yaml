@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.1.4"
+version: "1.1.5"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -92,6 +92,7 @@ options:
     airconditioner_range_max: 35
     elevator_packet_call_type: 0
     elevator_check_command_method: 0
+    elevator_packet_command_call_down_value: 6
     dimminglight_max_brightness_level: 7
     dimminglight_convert_method: 0
     clear_all_devices: false
@@ -169,6 +170,7 @@ schema:
     airconditioner_range_max: int
     elevator_packet_call_type: int(0,1)
     elevator_check_command_method: int(0,1)
+    elevator_packet_command_call_down_value: int(6,7)?
     dimminglight_max_brightness_level: int(1,255)
     dimminglight_convert_method: int(0,2)
     clear_all_devices: bool

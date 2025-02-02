@@ -1,3 +1,7 @@
+## 1.1.5
+
+- add parameter for calling elevator downside value
+
 ## 1.1.4
 
 - add parameters for auto-open front/communal door (kitchen subphone)
