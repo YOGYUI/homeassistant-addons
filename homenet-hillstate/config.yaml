@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.1.6"
+version: "1.1.7"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -84,6 +84,10 @@ options:
     frame_rate: 30
     width: 640
     height: 480
+    enable_auto_open_front_door: false
+    auto_open_front_door_interval: 3
+    enable_auto_open_communal_door: false
+    auto_open_communal_door_interval: 3
   etc: 
     thermo_len_per_dev: 3
     thermostat_range_min: 18
@@ -97,10 +101,8 @@ options:
     dimminglight_max_brightness_level: 7
     dimminglight_convert_method: 0
     clear_all_devices: false
-    enable_auto_open_front_door: false
-    auto_open_front_door_interval: 3
-    enable_auto_open_communal_door: false
-    auto_open_communal_door_interval: 3
+    change_device_state_after_command: false
+    
 schema:
   app_config_file_path: str
   mqtt_broker:
@@ -176,3 +178,4 @@ schema:
     dimminglight_max_brightness_level: int(1,255)
     dimminglight_convert_method: int(0,2)
     clear_all_devices: bool
+    change_device_state_after_command: bool?

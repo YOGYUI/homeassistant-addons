@@ -1,3 +1,7 @@
+## 1.1.7
+
+- add parameter for changing device state right after sending command
+
 ## 1.1.6
 
 - add parameter for logging elevator related rs-485 packet

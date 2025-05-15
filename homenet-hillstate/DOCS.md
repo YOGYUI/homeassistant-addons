@@ -167,6 +167,7 @@ etc:
   dimminglight_max_brightness_level: 7
   dimminglight_convert_method: 0
   clear_all_devices: false
+  change_device_state_after_command: false
 ```
 - thermo_len_per_dev: 난방 평소 쿼리-응답 패킷의 기기별 패킷 길이 (`3` 혹은 `8`)
 - thermostat_range_min: 난방 기기 설정 온도 최소값
@@ -181,6 +182,7 @@ etc:
 - dimminglight_convert_method: 디밍조명 밝기값 변환 방법 (`0`: 반올림, `1`: 내림, `2`: 올림)
 - clear_all_devices: 추가된 모든 RS-485 디바이스를 어플리케이션에서 삭제 (어플리케이션 재시작 후 자동으로 false로 전환됨)<br>
   `Note`: HA의 entry를 삭제하지는 않음
+- change_device_state_after_command: 디바이스 상태 변경 명령 직후 해당 명령값으로 갱신할 지 여부
 
 ### 주방 비디오폰(Subphone) 설정
 ```yaml
