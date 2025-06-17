@@ -2,6 +2,8 @@
 repo_path=/repos/yogyui/HomeNetwork
 
 echo "try to update repository"
+git remote update
+git checkout $(bashio::config 'branch_name')
 git pull
 
 # read `options` from config
@@ -14,6 +16,7 @@ CONFIG_PARSER_MAPPING="$(bashio::config 'parser_mapping')"
 CONFIG_PERIODIC_QUERY_STATE="$(bashio::config 'periodic_query_state')"
 CONFIG_SUBPHONE="$(bashio::config 'subphone')"
 CONFIG_ETC="$(bashio::config 'etc')"
+CONFIG_DEBUG="$(bashio::config 'debug')"
 
 uwsgi --ini ${repo_path}/Hillstate-Gwanggyosan/uwsgi.ini \
   --pyargv "--config_file_path=$CONFIG_FILE_PATH \
@@ -23,4 +26,5 @@ uwsgi --ini ${repo_path}/Hillstate-Gwanggyosan/uwsgi.ini \
   --parser_mapping=$CONFIG_PARSER_MAPPING \
   --periodic_query_state=$CONFIG_PERIODIC_QUERY_STATE \
   --subphone=$CONFIG_SUBPHONE \
-  --etc=$CONFIG_ETC"
+  --etc=$CONFIG_ETC \
+  --debug=$CONFIG_DEBUG"

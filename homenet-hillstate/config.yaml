@@ -1,5 +1,5 @@
 name: HomeNetwork for Hillstate
-version: "1.1.7"
+version: "1.1.8"
 slug: yogyui_homenet_hillstate
 description: RS-485 based HomeNetwork for Hillstate (Hyundai HT)
 arch:
@@ -30,6 +30,7 @@ map:
   - backup:rw
 options:
   app_config_file_path: /config/app_config.xml
+  branch_name: main
   mqtt_broker:
     host: core-mosquitto
     port: 1883
@@ -102,9 +103,23 @@ options:
     dimminglight_convert_method: 0
     clear_all_devices: false
     change_device_state_after_command: false
+  debug:
+    verbose_packet_light: false
+    verbose_packet_outlet: false
+    verbose_packet_gasvalve: false
+    verbose_packet_thermostat: false
+    verbose_packet_ventilator: false
+    verbose_packet_airconditioner: false
+    verbose_packet_elevator: false
+    verbose_packet_subphone: false
+    verbose_packet_batchoffsw: false
+    verbose_packet_hems: false
+    verbose_packet_emotionlight: false
+    verbose_packet_dimminglight: false
     
 schema:
   app_config_file_path: str
+  branch_name: str
   mqtt_broker:
     host: str
     port: int
@@ -179,3 +194,16 @@ schema:
     dimminglight_convert_method: int(0,2)
     clear_all_devices: bool
     change_device_state_after_command: bool?
+  debug:
+    verbose_packet_light: bool?
+    verbose_packet_outlet: bool?
+    verbose_packet_gasvalve: bool?
+    verbose_packet_thermostat: bool?
+    verbose_packet_ventilator: bool?
+    verbose_packet_airconditioner: bool?
+    verbose_packet_elevator: bool?
+    verbose_packet_subphone: bool?
+    verbose_packet_batchoffsw: bool?
+    verbose_packet_hems: bool?
+    verbose_packet_emotionlight: bool?
+    verbose_packet_dimminglight: bool?

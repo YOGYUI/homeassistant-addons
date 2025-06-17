@@ -23,6 +23,6 @@ addon_path=$(dirname $script_dir)
 #  -d local
 
 docker build \
-  --build-arg BUILD_FROM="homeassistant/amd64-base:latest" \
+  --build-arg BUILD_FROM="ghcr.io/home-assistant/amd64-base:latest" \
   -t local/my-test-addon \
   ${addon_path}

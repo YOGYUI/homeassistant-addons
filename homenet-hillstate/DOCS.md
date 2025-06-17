@@ -212,3 +212,21 @@ subphone:
 - auto_open_front_door_interval: 세대현관문 초인종 울림 후 자동으로 열리기까지의 시간 (단위: 초, 지정하지 않을 시 default값은 3.0)
 - enable_auto_open_communal_door: 공동현관문 초인종 울림 후 자동 열림 기능 활성화 여부 (지정하지 않을 시 default값은 false)
 - auto_open_communal_door_interval: 공동현관문 초인종 울림 후 자동으로 열리기까지의 시간 (단위: 초,지정하지 않을 시 default값은 3.0)
+
+### 디버깅용 설정
+```yaml
+debug:
+    verbose_packet_light: false
+    verbose_packet_outlet: false
+    verbose_packet_gasvalve: false
+    verbose_packet_thermostat: false
+    verbose_packet_ventilator: false
+    verbose_packet_airconditioner: false
+    verbose_packet_elevator: false
+    verbose_packet_subphone: false
+    verbose_packet_batchoffsw: false
+    verbose_packet_hems: false
+    verbose_packet_emotionlight: false
+    verbose_packet_dimminglight: false
+```
+- 디바이스 종류별 파싱된 패킷을 로그에 남길지 여부 (default: false)

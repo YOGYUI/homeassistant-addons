@@ -1,3 +1,7 @@
+## 1.1.8
+
+- add parameter for debugging (log parsed rs-45 packet)
+
 ## 1.1.7
 
 - add parameter for changing device state right after sending command
