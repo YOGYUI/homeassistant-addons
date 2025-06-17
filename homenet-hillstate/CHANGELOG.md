@@ -1,6 +1,7 @@
 ## 1.1.8
 
 - add parameter for debugging (log parsed rs-45 packet)
+- add mqtt topic prefix parameter
 
 ## 1.1.7
 

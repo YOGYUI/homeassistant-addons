@@ -37,6 +37,7 @@ options:
     username: username
     password: password
     client_id: yogyui_hyundai_ht
+    topic_prefix: home
     tls_enable: false
     tls_ca_certs: /config/ssl/cacert.pem
     tls_certfile: /config/ssl/fullchain.pem
@@ -126,6 +127,7 @@ schema:
     username: str
     password: str
     client_id: str
+    topic_prefix: str
     tls_enable: bool
     tls_ca_certs: str
     tls_certfile: str

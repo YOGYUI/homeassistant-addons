@@ -10,6 +10,7 @@ mqtt_broker:
   username: username
   password: password
   client_id: yogyui_hyundai_ht
+  topic_prefix: home
   tls_enable: false
   tls_ca_certs: /config/ssl/cacert.pem
   tls_certfile: /config/ssl/fullchain.pem
@@ -20,6 +21,7 @@ mqtt_broker:
 - username: MQTT 브로커 접속 계정
 - password: MQTT 브로커 계정 패스워드
 - client_id: MQTT 브로커에 접속할 클라이언트 아이디
+- topic_prefix: MQTT Topic 접두사
 - tls_enable: TLS/SSL 보안접속 활성화 여부
 - tls_ca_certs: CA 인증서 파일 경로
 - tls_certfile: 클라이언트 인증서 파일 경로 (PEM 인코딩)
